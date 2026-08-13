@@ -13,9 +13,9 @@ registry, install a service, or copy files to Windows folders.
 
 How to use
 ----------
-1. Put DDF-Window-Capture.exe in any folder accessible to the user.
+1. Put Window-Capture.exe in any folder accessible to the user.
 2. Open the Self KYC Form window.
-3. Double-click DDF-Window-Capture.exe.
+3. Double-click Window-Capture.exe.
 4. The first window whose title matches "*Self KYC Form*" opens in an
    always-on-top, resizable live preview.
 5. If there is no matching window, select any open window from the graphical
@@ -23,14 +23,14 @@ How to use
 
 Optional command-line switches
 ------------------------------
-  DDF-Window-Capture.exe --picker
-  DDF-Window-Capture.exe --title "*another window title*"
-  DDF-Window-Capture.exe --width 640 --height 480
+  Window-Capture.exe --picker
+  Window-Capture.exe --title "*another window title*"
+  Window-Capture.exe --width 640 --height 480
 
 Troubleshooting
 ---------------
 - Errors are shown on screen and logged to:
-  %TEMP%\DDF-Window-Capture-error.log
+  %TEMP%\Window-Capture-error.log
 - A Windows SmartScreen or company application-control warning is separate
   from administrator access. The executable is not digitally signed; your IT
   security policy may require signing or allow-listing before deployment.
