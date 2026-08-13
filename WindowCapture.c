@@ -15,7 +15,7 @@
 #include <wctype.h>
 #include <stdlib.h>
 
-#define APP_NAME L"DDF Window Capture"
+#define APP_NAME L" Window Capture"
 #define DEFAULT_PATTERN L"*Self KYC Form*"
 #define DEFAULT_WIDTH 480
 #define DEFAULT_HEIGHT 320
@@ -63,7 +63,7 @@ static void LogMessage(const WCHAR *message)
     if (!GetTempPathW((DWORD)(sizeof(tempPath) / sizeof(tempPath[0])), tempPath)) {
         return;
     }
-    if (FAILED(StringCchPrintfW(logPath, MAX_PATH, L"%sDDF-Window-Capture-error.log", tempPath))) {
+    if (FAILED(StringCchPrintfW(logPath, MAX_PATH, L"%s-Window-Capture-error.log", tempPath))) {
         return;
     }
 
@@ -361,7 +361,7 @@ static BOOL CreateViewer(HWND target)
 
     g_viewer = CreateWindowExW(
         WS_EX_TOPMOST,
-        L"DDFWindowCaptureViewer",
+        L"WindowCaptureViewer",
         caption,
         WS_OVERLAPPEDWINDOW,
         60,
@@ -508,8 +508,8 @@ static BOOL CreatePicker(void)
 {
     g_picker = CreateWindowExW(
         0,
-        L"DDFWindowCapturePicker",
-        L"Choose a window - DDF Window Capture",
+        L"WindowCapturePicker",
+        L"Choose a window -  Window Capture",
         WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT,
         CW_USEDEFAULT,
@@ -560,7 +560,7 @@ static BOOL ParseCommandLine(void)
         } else if (!lstrcmpiW(arguments[index], L"--help") || !lstrcmpiW(arguments[index], L"-h") || !lstrcmpiW(arguments[index], L"/?")) {
             MessageBoxW(
                 NULL,
-                L"DDF Window Capture\r\n\r\n"
+                L" Window Capture\r\n\r\n"
                 L"Double-click the executable to capture the first window matching *Self KYC Form*.\r\n"
                 L"If no match exists, a graphical window picker opens.\r\n\r\n"
                 L"Optional command-line arguments:\r\n"
@@ -588,14 +588,14 @@ static BOOL RegisterWindowClasses(void)
     windowClass.hIcon = LoadIconW(NULL, IDI_APPLICATION);
     windowClass.hIconSm = LoadIconW(NULL, IDI_APPLICATION);
     windowClass.lpfnWndProc = ViewerWindowProc;
-    windowClass.lpszClassName = L"DDFWindowCaptureViewer";
+    windowClass.lpszClassName = L"WindowCaptureViewer";
     windowClass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
     if (!RegisterClassExW(&windowClass)) {
         return FALSE;
     }
 
     windowClass.lpfnWndProc = PickerWindowProc;
-    windowClass.lpszClassName = L"DDFWindowCapturePicker";
+    windowClass.lpszClassName = L"WindowCapturePicker";
     windowClass.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
     if (!RegisterClassExW(&windowClass)) {
         return FALSE;
