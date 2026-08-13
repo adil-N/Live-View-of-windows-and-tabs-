@@ -1,0 +1,17 @@
+Build from source
+=================
+
+The delivered executable was cross-compiled as a native 64-bit Windows GUI
+application with Zig 0.12.0-dev.1286 (its C compiler and MinGW-w64 SDK).
+
+From this source folder, run:
+
+  zig cc -target x86_64-windows-gnu -Os -std=c11 -Wall -Wextra WindowCapture.c WindowCapture.rc -o DDF-Window-Capture.exe -Wl,--subsystem,windows -ldwmapi -lcomctl32 -lshell32 -lgdi32
+
+The resource file embeds WindowCapture.manifest. Its requested execution level
+is "asInvoker", so the application runs as the signed-in user and does not
+request administrator elevation.
+
+No third-party runtime DLL is bundled or required. The only imported DLLs are
+standard Windows components: dwmapi, comctl32, shell32, gdi32, kernel32,
+msvcrt, and user32.

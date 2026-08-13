@@ -1,0 +1,2 @@
+DDF-Window-Capture.exe
+SHA-256: 3a2d715f9bc413be41e6dae2485da30b262cdfcfa2b7fcc3382e06b4f86f693b
