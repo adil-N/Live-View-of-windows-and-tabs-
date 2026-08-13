@@ -22,8 +22,8 @@ BEGIN
       VALUE "CompanyName", "Dubai Duty Free\0"
       VALUE "FileDescription", "DDF Window Capture\0"
       VALUE "FileVersion", "1.0.0.0\0"
-      VALUE "InternalName", "DDF-Window-Capture\0"
-      VALUE "OriginalFilename", "DDF-Window-Capture.exe\0"
+      VALUE "InternalName", "Window-Capture\0"
+      VALUE "OriginalFilename", "Window-Capture.exe\0"
       VALUE "ProductName", "DDF Window Capture\0"
       VALUE "ProductVersion", "1.0.0.0\0"
     END
